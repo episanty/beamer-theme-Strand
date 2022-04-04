@@ -1,0 +1,73 @@
+% Copyright 2022 by Emilio Pisanty
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+
+\mode<presentation>
+
+\usepackage{mathptmx}
+\usepackage{helvet}
+
+
+\setbeamerfont{title}{series=\mdseries,size*={18}{21}}
+\setbeamerfont{author}{series=\mdseries,size*={11}{11}}
+\setbeamerfont{institute}{series=\mdseries,size*={8}{8}}
+\setbeamerfont{subtitle}{series=\mdseries,size*={8}{8}}
+\setbeamerfont{date}{series=\mdseries,size*={7}{7}}
+
+
+\setbeamerfont{author in head/foot}{series=\bfseries}
+
+
+% Title page
+\defbeamertemplate*{title page}{strand}[1][]
+{
+\thispagestyle{empty}
+%
+
+{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic}\\[3mm]
+
+\begin{beamercolorbox}[sep=8pt,center,#1]{title page header}
+  \color{white}
+  
+  \vspace{-3mm}
+  \rule{0.92\textwidth}{2pt}
+  \vspace{2.5mm}
+
+  \usebeamerfont{title}
+  \inserttitle\\[2.5pt]
+  \usebeamerfont{subtitle}
+  \insertsubtitle\\[4pt]
+  \usebeamerfont{author}
+  \insertauthor\\[1.5pt]
+  \usebeamerfont{institute}
+  \insertinstitute\\[5pt]
+  \usebeamerfont{date}
+  \insertdate
+  \vspace{2mm}
+\end{beamercolorbox}%
+%
+\addtocounter{framenumber}{-1}
+}
+
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=12.5pt,center]{title page header}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+\mode
+<all>
